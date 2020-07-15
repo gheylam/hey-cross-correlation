@@ -1,0 +1,12 @@
+function [image_height,image_width] = cc_invert(rows,cols)
+%CC_INVERT Summary of this function goes here
+%   Inverts the image of white values to be 0 and black values to be 255 
+%   to support finding the sum of product through cross correlation 
+
+
+
+
+outputArg1 = inputArg1;
+image_width = cols;
+end
+
