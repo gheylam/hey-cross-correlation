@@ -42,12 +42,30 @@ I also converted the rgb 3 channel images into a single greyscale image to simpl
 
 ### Result 
 Here is the result of my current implmentation using matlab's surf() function.
+![Implementation#1 results graph](https://github.com/gheylam/hey-cross-correlation/blob/master/results/implementation_1_result_bottom.png)
 
-![Implementation#1 results graph](https://github.com/gheylam/hey-cross-correlation/blob/master/results/Screenshot%20from%202020-07-15%2011-32-38.png)
+We can clearly see the four dots are producing the strongest signal. We can also see that the graph is shifted 
+10 pixels. This is because we are not sampling every point and thus, this will be an area of improvement in the 
+next iteration.
 
-We can clearly see the four dots are producing the strongest signal. 
-
-### Next steps for improvements 
+### Next steps for improvements (for implementation #2) 
 1. Iterate the images from the center of the probe image instead of (0,0)
 2. Deal with out-of-bound cases more elegantly by summing the pixel overlap 
 3. Produce sharper peaks by making heavier penalities when the pixels are not the same, i.e. black+white. 
+
+## Log 2 - 17.07.2020 Second implementation on Matlab (GreyScale, Centered) 
+For the second implementation I have centered the probing image at the point of sampling. This allows us to 
+sample every point in the test image instead of throwing away the sampling opportunity if the probing image 
+dimensions exceed the boundaries of our test image. 
+
+During this implementation, dealing with the offset and getting my head around matlab's index from 1 was 
+more challenging than expected and led to code which isn't so elegant. Therefore I will invest in future
+effort to change the offset code to make it more digestable. 
+
+### Result 
+Here is the result of the second implemention. We can clearly identify the correction in the offset. 
+![Implementation#2 results graph](https://github.com/gheylam/hey-cross-correlation/blob/master/results/implementation_result_2.png) 
+
+### Next steps for improvements (for implementation #3) 
+1. Produce sharper peaks by making heavier penalities when the pixels are not the same, i.e. black+white.
+2. Refactor the offset code to make it more readable. 
